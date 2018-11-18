@@ -5,6 +5,29 @@ import java.sql.*;
 public class Product {
 
 
+    //insert product
+    public void insertProduct(String product_name,String retailer_country) {
+        try {
+
+            long startTime = System.nanoTime();
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/tamara?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "admin*");
+            String SQL="INSERT INTO PRODUCTS(product_name,retailer_country) VALUES(?,?)";
+
+            PreparedStatement preparedStatement=conn.prepareStatement(SQL);
+            preparedStatement.setString(1,product_name);
+            preparedStatement.setString(2,retailer_country);
+            preparedStatement.executeUpdate();
+            long stopTime = System.nanoTime();
+
+            System.out.println(stopTime - startTime);
+
+            conn.close();
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
+    }
+
     public void FindProductsByName(String product_name){
         try {
 
@@ -131,6 +154,7 @@ public class Product {
         //  product.deleteProductById(4);
         //  product.deleteProductByName("Star Gazer 2");
         //  product.updateProductName("USA");
-        product.FindProductsByName("Star Dome");
+       // product.FindProductsByName("Star Dome");
+        product.insertProduct("bracelet","MK");
     }
 }
