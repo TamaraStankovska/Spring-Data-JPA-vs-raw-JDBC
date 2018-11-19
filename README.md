@@ -27,7 +27,7 @@ The table Product consists of the following properties:
 - quarter\_year,
 -
 
-The table &quot;Product&quot; has 10 000 records, used for the evaluation.
+The table &quot;Product&quot; has 50 000 records, used for the evaluation.
 
 # 2. Spring Data JPA
 
