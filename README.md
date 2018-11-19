@@ -54,3 +54,4 @@ The for processing any SQL statement with JDBC are:
 With raw JDBC are written queries for insertion of data, listing all of the products, finding a product by id or a name, deleting product by id or by name and updating products.
 
 # 5. Metrics and Conclusion
+![](https://github.com/TamaraStankovska/Spring-Data-JPA-vs-raw-JDBC/blob/master/Capture.PNG)
